@@ -1,0 +1,70 @@
+*,*::before,*::after{box-sizing:border-box}
+
+:root{
+  --bg:#0d0c11;
+  --card:#16141d;
+  --line:#2a2634;
+  --paper:#f2ebdf;
+  --dim:#a89f94;
+  --amber:#ffb43a;
+  --display:"Big Shoulders Display",Impact,sans-serif;
+  --body:"Fraunces",Georgia,serif;
+  --mono:"Space Mono",monospace;
+}
+
+body{
+  margin:0;background:var(--bg);color:var(--paper);
+  font-family:var(--body);line-height:1.7;font-size:1.02rem;
+  padding:clamp(1.5rem,5vw,4rem);
+  background-image:radial-gradient(120% 60% at 50% -10%,#1a1622,transparent 60%);
+}
+
+/* Capçalera */
+.head{max-width:1100px;margin:0 auto 2.6rem;text-align:center}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin:0 0 .6rem}
+.head h1{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(2.6rem,9vw,5.5rem);line-height:.9;margin:0 0 .8rem;letter-spacing:-.01em}
+.intro{max-width:44ch;margin:0 auto;color:var(--dim)}
+
+/* Graella de fitxes */
+.grid{max-width:1100px;margin:0 auto;display:grid;gap:1.4rem;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  overflow:hidden;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 22px 44px rgba(0,0,0,.5)}
+
+.poster{position:relative;margin:0}
+.poster img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;
+  filter:grayscale(.4) contrast(1.05);transition:filter .5s ease,transform .6s ease}
+.card:hover .poster img{filter:none;transform:scale(1.05)}
+.tag{position:absolute;top:.8rem;left:.8rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.16em;text-transform:uppercase;background:rgba(13,12,17,.85);
+  color:var(--amber);padding:.32rem .6rem;border:1px solid var(--line)}
+
+.info{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--dim);margin:0}
+.info h2{font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:1.8rem;line-height:1;margin:0}
+.synopsis{color:#d8cfc3;margin:0;flex:1}
+
+/* Enllaç IMDb */
+.imdb{margin-top:.4rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);border:1px solid var(--line);background:#100e15;
+  padding:.6rem .9rem;width:max-content;transition:background .3s,color .3s,border-color .3s}
+.imdb span{background:#f5c518;color:#14121b;font-weight:700;padding:.05rem .35rem;border-radius:3px}
+.imdb:hover{background:var(--amber);color:#14121b;border-color:var(--amber)}
+.imdb:hover span{background:#14121b;color:#f5c518}
+.imdb:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* Peu */
+.foot{max-width:1100px;margin:2.6rem auto 0;text-align:center;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:#6f667a}
+
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
