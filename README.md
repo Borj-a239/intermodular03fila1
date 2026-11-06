@@ -7,7 +7,7 @@ títol i cada fitxa porta a una pàgina pròpia amb **imatge**, **sinopsi**, **f
 IMDb**. Només HTML i CSS propi, sense JavaScript ni dependències.
 
 - **Repositori:** https://github.com/intermodular03/intermodular03fila1
-- **GitHub Project (Kanban):** _pendent d'afegir_
+- **GitHub Project (Kanban):** https://github.com/orgs/intermodular03/projects/1
 
 ## Membres
 
