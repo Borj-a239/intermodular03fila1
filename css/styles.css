@@ -58,12 +58,45 @@ body{
 .imdb:hover span{background:#14121b;color:#f5c518}
 .imdb:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
+/* Enllaç de la fitxa a la pàgina de detall */
+.card-link{color:inherit;text-decoration:none}
+.card-link:hover h2{color:var(--amber)}
+.card-link:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+.more{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin:0}
+
+/* Navegació */
+.nav{max-width:1100px;margin:0 auto 2rem;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;
+  justify-content:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.nav a{color:var(--dim);text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--amber);border-color:var(--amber)}
+
+/* Pàgina de detall */
+.detail{max-width:1100px;margin:0 auto;display:grid;gap:clamp(1.5rem,4vw,3rem);
+  grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start;
+  background:var(--card);border:1px solid var(--line);padding:clamp(1rem,3vw,2rem)}
+.detail .poster img{filter:none}
+.detail .info{padding:0;gap:1rem}
+.detail h1{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(2.2rem,6vw,4rem);line-height:.95;margin:0}
+.detail .synopsis{font-size:1.08rem}
+.facts{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.2rem;margin:.4rem 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0}
+.facts dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.facts dd{margin:0;color:var(--paper)}
+.back{display:block;max-width:1100px;margin:0 auto 1.4rem;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-decoration:none}
+.back:hover{color:var(--amber)}
+
 /* Peu */
 .foot{max-width:1100px;margin:2.6rem auto 0;text-align:center;
   font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:#6f667a}
 
 @media (max-width:600px){
   .grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .detail{grid-template-columns:1fr}
+  .detail .poster{max-width:360px;margin:0 auto}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
